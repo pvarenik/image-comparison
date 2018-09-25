@@ -22,8 +22,8 @@ public class ImageComparisonToolsUnitTest {
     public void testFrameMethod() throws IOException, URISyntaxException {
         BufferedImage image = readImageFromResources( "result1.png" );
         Frame resultFrame = createGUI( image );
-        assertEquals( image.getHeight(), resultFrame.getHeight() );
-        assertEquals( image.getWidth(), resultFrame.getWidth() );
+        assertEquals( ( int ) ( image.getHeight() * 1.1 ), resultFrame.getHeight() );
+        assertEquals( ( int ) ( image.getWidth() * 1.1 ), resultFrame.getWidth() );
     }
 
     @Test( expected = IllegalArgumentException.class )
