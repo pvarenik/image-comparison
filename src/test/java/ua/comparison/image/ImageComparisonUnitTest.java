@@ -37,12 +37,4 @@ public class ImageComparisonUnitTest {
             }
         }
     }
-
-    /**
-     * Test issue #17. It was StackOverFlowError.
-     */
-    @Test
-    public void testIssue17() throws IOException, URISyntaxException {
-        new ImageComparison( "b1#17.png", "b2#17.png" ).compareImages();
-    }
 }

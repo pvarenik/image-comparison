@@ -38,11 +38,6 @@ public class ImageComparison {
         matrix = populateTheMatrixOfTheDifferences( image1, image2 );
     }
 
-    public static void main( String[] args ) throws IOException, URISyntaxException {
-        ImageComparison comparison = new ImageComparison("image1.png", "image2.png");
-        createGUI( comparison.compareImages() );
-    }
-
     /**
      * Draw rectangles which cover the regions of the difference pixels.
      * @return the result of the drawing.

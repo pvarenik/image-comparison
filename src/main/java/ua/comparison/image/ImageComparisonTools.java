@@ -26,12 +26,26 @@ public class ImageComparisonTools {
         frame.setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
         JLabel label = new JLabel();
         label.setIcon( new ImageIcon( image, "Result") );
+
         frame.getContentPane().add( label, BorderLayout.CENTER);
-        frame.setPreferredSize(new Dimension( image.getWidth(), ( int )( image.getHeight() ) ) );
+        frame.setPreferredSize( createDimension(image) );
         frame.pack();
         frame.setLocationRelativeTo( null );
         frame.setVisible( true );
+
         return frame;
+    }
+
+    /**
+     * Create {@link Dimension} object using {@link BufferedImage}.
+     *
+     * @param image {@link BufferedImage} object for getting width and height.
+     * @return specific {@link Dimension} object.
+     */
+    private static Dimension createDimension( BufferedImage image ) {
+        int widthFrame = (int) ( image.getTileWidth() * 1.1 );
+        int heightFrame = (int) ( image.getHeight() * 1.1 );
+        return new Dimension(widthFrame, heightFrame);
     }
 
     /**
